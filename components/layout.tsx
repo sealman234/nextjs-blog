@@ -4,8 +4,12 @@ import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "Sean Huang";
-
+// global site data
+const siteAuthor = "Sean Huang";
+const siteDescription =
+  "這裡是海豹人的第一個家，成立於 2019 年，至今仍持續記錄我的前端學習和開發筆記，歡迎交流。";
+const siteUrl = "https://nextjs-blog-sealman234.vercel.app";
+const siteImage = "https://i.imgur.com/z7pbCBu.jpg";
 export const siteTitle = "海豹人的第一個家";
 
 export default function Layout({
@@ -18,33 +22,36 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <Head>
+        {/* Primary Meta Tags */}
         <title>{siteTitle}</title>
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="這裡是海豹人的第一個家。成立於 2019 年，至今仍持續更新文章，分享前端領域的各種有趣知識。"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content={siteImage} />
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={siteTitle} />
+        <meta property="twitter:description" content={siteDescription} />
+        <meta property="twitter:image" content={siteImage} />
       </Head>
       <header className={styles.header}>
         {home ? (
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/images/snoopy.jpeg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{siteAuthor}</h1>
           </>
         ) : (
           <>
@@ -52,7 +59,7 @@ export default function Layout({
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src="/images/snoopy.jpeg"
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
@@ -62,7 +69,7 @@ export default function Layout({
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={utilStyles.colorInherit}>{siteAuthor}</a>
               </Link>
             </h2>
           </>
