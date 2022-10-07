@@ -6,16 +6,17 @@ import Link from "next/link";
 
 const name = "Sean Huang";
 
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "海豹人的第一個家";
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
-      <Head>
+      <Head lang="zh-TW-Hant">
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="這裡是海豹人的第一個家。成立於 2019 年，至今仍持續更新文章，分享前端領域的各種有趣知識。"
         />
         <meta
           property="og:image"

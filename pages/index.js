@@ -19,6 +19,16 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <meta name="description" content="Checkout our cool page" key="desc" />
+        <meta property="og:title" content="Social Title for Cool Page" />
+        <meta
+          property="og:description"
+          content="And a social description for our cool page"
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/images/cool-page.jpg"
+        />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hi there!</p>
