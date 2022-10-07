@@ -8,10 +8,16 @@ const name = "Sean Huang";
 
 export const siteTitle = "海豹人的第一個家";
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) {
   return (
     <div className={styles.container}>
-      <Head lang="zh-TW-Hant">
+      <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
